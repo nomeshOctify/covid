@@ -10,3 +10,80 @@ body {
   color: black;
   background-color: #f7f5ff;
 }
+
+h4,
+p {
+  margin: 0;
+}
+
+// app js
+.app {
+  .col-md-6 {
+    .header {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 30px;
+        margin: 10px;
+        background: #060606;
+        border-radius: 5px;
+        path {
+          fill: orange;
+        }
+      }
+
+      .header-text {
+        h4 {
+          font-weight: bold;
+        }
+        p {
+          color: #707070;
+        }
+      }
+    }
+
+    .header-second {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h4 {
+        font-weight: bold;
+      }
+
+      p {
+        color: #707070;
+      }
+    }
+
+    .body {
+      height: 500px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      table {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .card {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .colored-buttons {
+        padding: 15px 30px;
+        background: pink;
+        color: white;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        border-radius: 10px;
+      }
+    }
+  }
+}
