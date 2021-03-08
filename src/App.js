@@ -11,7 +11,7 @@ const App = () => {
   const [dailyStates, setDailyStates] = React.useState([]);
   const [selectedState, setSelectedState] = React.useState(null);
 
-  let [values, setValues] = React.useState({
+  let values = React.useRef({
     confirmed: null,
     active: null,
     deceased: null,
@@ -35,8 +35,6 @@ const App = () => {
   }, []);
 
   const handleClick = (e) => {
-    console.log(e);
-
     const clickedPoint = e.target;
     if (
       clickedPoint.closest("path") &&
@@ -49,12 +47,12 @@ const App = () => {
 
       data["statewise"]?.forEach((obj) => {
         if (obj["state"] === selectedState) {
-          setValues({
+          values.current = {
             confirmed: obj["confirmed"],
             active: obj["active"],
             deceased: obj["deaths"],
             recovered: obj["recovered"],
-          });
+          };
         }
       });
     } else {
@@ -84,13 +82,13 @@ const App = () => {
                 <thead>
                   <tr>
                     <th scope="col">STATE/UT</th>
-                    <th scope="col" style={{ color: "aquamarine" }}>
+                    <th scope="col" style={{ color: "rgb(255, 142, 49)" }}>
                       CONFIRMED
                     </th>
-                    <th scope="col" style={{ color: "brown" }}>
+                    <th scope="col" style={{ color: "rgb(27, 209, 255)" }}>
                       ACTIVE
                     </th>
-                    <th scope="col" style={{ color: "green" }}>
+                    <th scope="col" style={{ color: "rgb(0, 255, 115)" }}>
                       RECOVERED
                     </th>
                     <th scope="col" style={{ color: "red" }}>
@@ -124,25 +122,22 @@ const App = () => {
             </div>
 
             <Card>
-              <div className="selectedState">
-                <h3>{selectedState}</h3>
-              </div>
               <Row noGutters>
                 <Col md={3} className="colored-buttons btn1">
                   <span>{"CONFIRMED"}</span>
-                  <span>{values.confirmed}</span>
+                  <span>{values.current.confirmed}</span>
                 </Col>
                 <Col md={3} className="colored-buttons btn2">
                   <span>{"ACTIVE"}</span>
-                  <span>{values.active}</span>
+                  <span>{values.current.active}</span>
                 </Col>
                 <Col md={3} className="colored-buttons btn3">
                   <span>{"RECOVERED"}</span>
-                  <span>{values.recovered}</span>
+                  <span>{values.current.recovered}</span>
                 </Col>
                 <Col md={3} className="colored-buttons btn4">
                   <span>{"DECEASED"}</span>
-                  <span>{values.deceased}</span>
+                  <span>{values.current.deceased}</span>
                 </Col>
               </Row>
 

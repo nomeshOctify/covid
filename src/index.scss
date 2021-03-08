@@ -35,7 +35,7 @@ p {
       }
 
       .header-text {
-        h1{
+        h1 {
           font-weight: bold;
         }
         p {
@@ -43,7 +43,6 @@ p {
           font-weight: 600;
         }
       }
-     
     }
 
     .header-second {
@@ -63,7 +62,7 @@ p {
     }
 
     .body {
-      height: 500px;
+      height: 90vh;
       overflow-y: auto;
       overflow-x: hidden;
       table {
@@ -76,41 +75,38 @@ p {
       // flex-direction: row;
       // justify-content: space-evenly;
       // align-items: center;
-      .selectedState{
-            color: orangered;
-            text-align: center;
-            padding: 10px;
-            font-weight: bolder;
-                
+      .selectedState {
+        color: orangered;
+        text-align: center;
+        padding: 10px;
+        font-weight: bolder;
       }
       .row {
         margin: 0;
         padding: 10px;
         .colored-buttons {
           padding: 15px 30px;
-        
-          color: black;
-        
+          color: white;
+          font-weight: bold;
           align-items: flex-start;
           display: flex;
           flex-direction: column;
           font-weight: bold;
           border-radius: 10px;
-          
         }
-        .btn1{
-          background-color: aquamarine !important;
-        }.btn2{
-          background-color: yellow !important;
-        }.btn3{
-          background-color: green !important;
-        }.btn4{
+        .btn1 {
+          background-color: rgb(255, 142, 49) !important;
+        }
+        .btn2 {
+          background-color: rgb(27, 209, 255) !important;
+        }
+        .btn3 {
+          background-color: rgb(0, 255, 115) !important;
+        }
+        .btn4 {
           background-color: red !important;
         }
       }
-      
-
-      
     }
   }
 }
